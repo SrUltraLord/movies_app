@@ -11,7 +11,7 @@ class CardSwiper extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      height: screenSize.height * 0.6,
+      height: screenSize.height * 0.55,
       // color: Colors.red,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
