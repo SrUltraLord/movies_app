@@ -35,6 +35,10 @@ class Movie {
   double voteAverage;
   int voteCount;
 
+  get fullPosterImg => (posterPath != null)
+      ? 'https://image.tmdb.org/t/p/w500$posterPath'
+      : 'https://i.stack.imgur.com/GNhxO.png';
+
   factory Movie.fromJson(String str) => Movie.fromMap(json.decode(str));
 
   Map<String, dynamic> toMap() => {
@@ -62,7 +66,8 @@ class Movie {
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
         id: json["id"],
         originalLanguage:
-            originalLanguageValues.map[json["original_language"]]!,
+            originalLanguageValues?.map[json["original_language"]] ??
+                OriginalLanguage.EN,
         originalTitle: json["original_title"],
         overview: json["overview"],
         popularity: json["popularity"].toDouble(),
