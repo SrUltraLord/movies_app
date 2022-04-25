@@ -39,7 +39,7 @@ class Movie {
       ? 'https://image.tmdb.org/t/p/w500$posterPath'
       : 'https://i.stack.imgur.com/GNhxO.png';
 
-  get fullBackdropPath => (posterPath != null)
+  get fullBackdropPath => (backdropPath != null)
       ? 'https://image.tmdb.org/t/p/w500$backdropPath'
       : 'https://i.stack.imgur.com/GNhxO.png';
 
